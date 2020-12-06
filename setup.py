@@ -11,8 +11,6 @@ setup(
   download_url = 'https://github.com/joelbarmettlerUZH/Scrapeasy/archive/pypi-0_1_3.tar.gz',
   keywords = ['scraping', 'easy', 'scraper', 'website', 'download', 'links', 'images', 'videos'],
   install_requires=[
-          'validators',
-          'beautifulsoup4',
       ],
   classifiers=[  # Optional
     # How mature is this project? Common values are
