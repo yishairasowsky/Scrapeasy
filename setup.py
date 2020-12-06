@@ -1,36 +1,30 @@
-from distutils.core import setup
-setup(
-  name = 'scrapeasy_copy',
-  packages = ['scrapeasy_copy'],
-  version = '0.12',
-  license='MIT',
-  description = 'Scraping in python made easy - receive the content you like in just one line of code!',
-  author = 'disciple of Joel Barmettler',
-  author_email = 'yishairasowsky@gmail.com',
-  url = 'https://github.com/yishairasowsky/scrapeasy',
-  download_url = 'https://github.com/joelbarmettlerUZH/Scrapeasy/archive/pypi-0_1_3.tar.gz',
-  keywords = ['scraping', 'easy', 'scraper', 'website', 'download', 'links', 'images', 'videos'],
-  install_requires=[
-      ],
-  classifiers=[  # Optional
-    # How mature is this project? Common values are
-    #   3 - Alpha
-    #   4 - Beta
-    #   5 - Production/Stable
-    'Development Status :: 3 - Alpha',
+from setuptools import setup, find_packages
 
-    # Indicate who your project is intended for
-    'Intended Audience :: Developers',
-    'Topic :: Software Development :: Build Tools',
+with open('README.md') as readme_file:
+    README = readme_file.read()
 
-    # Pick your license as you wish
-    'License :: OSI Approved :: MIT License',
+with open('HISTORY.md') as history_file:
+    HISTORY = history_file.read()
 
-    # Specify the Python versions you support here. In particular, ensure
-    # that you indicate whether you support Python 2, Python 3 or both.
-    'Programming Language :: Python :: 3',
-    'Programming Language :: Python :: 3.4',
-    'Programming Language :: Python :: 3.5',
-    'Programming Language :: Python :: 3.6',
-  ],
+setup_args = dict(
+    name='elastictools',
+    version='0.1.2',
+    description='Useful tools to work with Elastic stack in Python',
+    long_description_content_type="text/markdown",
+    long_description=README + '\n\n' + HISTORY,
+    license='MIT',
+    packages=find_packages(),
+    author='Thuc Nguyen',
+    author_email='gthuc.nguyen@gmail.com',
+    keywords=['Elastic', 'ElasticSearch', 'ElasticStack'],
+    url='https://github.com/ncthuc/elastictools',
+    download_url='https://pypi.org/project/elastictools/'
 )
+
+install_requires = [
+    'elasticsearch>=6.0.0,<7.0.0',
+    'jinja2'
+]
+
+if __name__ == '__main__':
+    setup(**setup_args, install_requires=install_requires)
